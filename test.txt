@@ -1,0 +1,10 @@
+drop database if exists example
+create database example
+use example
+CREATE TABLE 'Customer'(
+    'CustName' VARCHAR(20) NOT NULL,
+    'City' VARCHAR(20),
+    'Size' CHAR(1),
+    PRIMARY KEY('CustName'),
+    INSERT INTO 'Customer' VALUES('1','2','3'),
+) 

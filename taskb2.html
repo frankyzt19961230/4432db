@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script type="text/javascript">
+        var xmlHttp;
+        function showInfo(str)  {
+	    try{  	xmlHttp = new XMLHttpRequest();
+	    } catch (e){
+	        try{xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+	        }  catch (e) {
+		        try{
+	  	            xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+		        } catch (e){
+		        alert("Error!");     return ;
+		        }
+	        }
+	    }
+	    var url = "display2.php?continent=" + str; //get continent 的值在这里表示 生成一个新的url. 在php里get的是一个叫continent的值
+	    xmlHttp.onreadystatechange=function()  {
+	        if (xmlHttp.readyState == 4)  {
+                queryInfo.innerHTML = xmlHttp.responseText;
+	             }
+	    }
+	    xmlHttp.open("GET", url, true);
+	    xmlHttp.send(null);
+      }
+    </script>
+</head>
+<body>
+    <h1>Select a list of counties by continent</h1>
+    
+    <form ><fieldset>
+        <legend style="color:blue">Select continent</legend>
+            <label for="Africa">
+                <input name="continent" type="radio" id="Africa" checked="checked" onchange="showInfo(this.id)"/>
+                Africa</label>
+            <label for="Antarctica">
+                <input name="continent" type="radio" id="Antarctica" checked="checked" onchange="showInfo(this.id)"/>
+                Antarctica</label>
+            <label for="Asia">
+                <input name="continent" type="radio" id="Asia" checked="checked" onchange="showInfo(this.id)"/>
+                Asia</label>
+            <label for="Europe">
+                <input name="continent" type="radio" id="Europe" checked="checked" onchange="showInfo(this.id)"/>
+                Europe</label>
+            <label for="North America">
+                <input name="continent" type="radio" id="North America" checked="checked" onchange="showInfo(this.id)"/>
+                North America</label>
+            <label for="Oceania">
+                <input name="continent" type="radio" id="Oceania" checked="checked" onchange="showInfo(this.id)"/>
+                Oceania</label>
+            <label for="South America">
+                <input name="continent" type="radio" id="South America" checked="checked" onchange="showInfo(this.id)"/>
+                South America</label>
+        <input type="button" value="View counties in this continent"/>
+    </fieldset></form>
+    <div id="queryInfo"></div>
+</body>
+</html>

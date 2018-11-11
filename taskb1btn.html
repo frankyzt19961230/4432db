@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script type="text/javascript"></script>
+</head>
+<body>
+    <h1>Select a list of counties by continent</h1>
+    <form method="GET" action="display.php">
+        <fieldset>
+            <legend style="color:blue">Select continent</legend>
+            <p>
+                <label for="Africa"><input name="continent" type="radio" id="Africa" value="Africa">Africa</label>
+                <label for="Antarctica"><input name="continent" type="radio" id="Antarctica" value="Antarctica">Antarctica</label>
+                <label for="Asia"><input name="continent" type="radio" id="Asia" value="Asia">Asia</label>
+                <label for="Europe"><input name="continent" type="radio" id="Europe" value="Europe">Europe</label>
+                <label for="North America"><input name="continent" type="radio" id="North America" value="North America">North America</label>
+                <label for="Oceania"><input name="continent" type="radio" id="Oceania" value="Oceania">Oceania</label>
+                <label for="South America"><input name="continent" type="radio" id="South America" value="South America">South America</label>
+            </p>
+            <input type="submit" value="View counties in this continent"/>
+            
+        </fieldset>
+    </form>
+</body>
+</html>
